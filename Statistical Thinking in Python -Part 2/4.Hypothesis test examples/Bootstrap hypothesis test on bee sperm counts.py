@@ -18,6 +18,5 @@ bs_reps_treated = draw_bs_reps(treated_shifted,
 bs_replicates = bs_reps_control-bs_reps_treated
 
 # Compute and print p-value: p
-p = np.sum(bs_replicates >= np.mean(control) - np.mean(treated)) \
-            / len(bs_replicates)
+p = np.sum(bs_replicates >= diff_means)/ len(bs_replicates)
 print('p-value =', p)
